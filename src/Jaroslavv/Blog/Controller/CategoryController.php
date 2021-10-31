@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Jaroslavv\Blog\Controller;
 
 use Jaroslavv\Blog\Block\CategoryBlock;
-use Jaroslavv\Framework\Http\Controller\ControllerInterface;
 use Jaroslavv\Framework\Http\Response\Raw;
 use Jaroslavv\Framework\View\PageResponse;
 
