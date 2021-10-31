@@ -1,0 +1,5 @@
+.idea/
+.DS_Store
+var/log/
+.docker-sync/
+vendor/
