@@ -12,7 +12,7 @@ class CategoryListBlock extends Block
 {
     private CategoryRepository $categoryRepository;
 
-    protected string $template = '../src/DVCampus/Catalog/view/category_list.php';
+    protected string $template = 'category_list.php';
 
     /**
      * @param CategoryRepository $categoryRepository
@@ -20,6 +20,15 @@ class CategoryListBlock extends Block
     public function __construct(CategoryRepository $categoryRepository)
     {
         $this->categoryRepository = $categoryRepository;
+        parent::__construct();
+    }
+
+    /**
+     * @return string
+     */
+    public function getView(): string
+    {
+        return __DIR__ . '/../view/';
     }
 
     /**

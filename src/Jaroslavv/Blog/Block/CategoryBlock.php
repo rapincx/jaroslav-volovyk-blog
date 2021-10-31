@@ -16,7 +16,7 @@ class CategoryBlock extends Block
 
     private PostRepository $postRepository;
 
-    protected string $template = '../src/DVCampus/Catalog/view/category.php';
+    protected string $template = 'category.php';
 
     /**
      * @param Request $request
@@ -29,6 +29,15 @@ class CategoryBlock extends Block
     {
         $this->request = $request;
         $this->postRepository = $postRepository;
+        parent::__construct();
+    }
+
+    /**
+     * @return string
+     */
+    public function getView(): string
+    {
+        return __DIR__ . '/../view/';
     }
 
     /**
@@ -44,7 +53,7 @@ class CategoryBlock extends Block
      * @throws DependencyException
      * @throws NotFoundException
      */
-    public function getCategoryProducts(): array
+    public function getCategoryPosts(): array
     {
         return $this->postRepository->getByIds(
             $this->getCategory()->getPostIds()

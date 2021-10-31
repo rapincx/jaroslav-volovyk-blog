@@ -1,11 +1,13 @@
 <?php
-/** @var \DVCampus\Catalog\Block\Product $block */
-$product = $block->getProduct();
+/** @var PostBlock $block */
+
+use Jaroslavv\Blog\Block\PostBlock;
+
+$post = $block->getPost();
 ?>
 <div class="product-page">
-    <img src="/product-placeholder.png" alt="<?= $product->getName() ?>" width="300"/>
-    <h1><?= $product->getName() ?></h1>
-    <p><?= $product->getDescription() ?></p>
-    <span>$<?= $product->getPrice() ?></span>
-    <button type="button">Add To Cart</button>
+    <img src="/article-placeholder.jpg" alt="<?= $post->getName() ?>" width="300"/>
+    <h1><?= $post->getName() ?></h1>
+    <p><?= $post->getDescription() ?></p>
+    <span>Date publish: <?= $post->getDate() ?></span>
 </div>

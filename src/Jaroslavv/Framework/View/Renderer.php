@@ -73,6 +73,10 @@ class Renderer
         return ob_get_clean();
     }
 
+    /**
+     * @throws DependencyException
+     * @throws NotFoundException
+     */
     public function __toString()
     {
         return $this->render(Block::class, '../src/page.php');

@@ -1,14 +1,14 @@
 <?php
-/** @var CategoryBlock $block */
+/** @var NewPostsBlock $block */
 
-use Jaroslavv\Blog\Block\CategoryBlock;
+use Jaroslavv\Cms\Block\NewPostsBlock;
 
 ?>
-<div title="category-wrapper">
-    <h1><?= $block->getCategory()->getName() ?></h1>
-    <div class="product-list">
-        <?php foreach ($block->getCategoryPosts() as $post) : ?>
-            <div class="product">
+<section title="New Articles">
+    <h2>New Articles</h2>
+    <div class="article-list">
+        <?php foreach ($block->getNewPosts() as $post) : ?>
+            <div class="article">
                 <a href="/<?= $post->getUrl() ?>" title="<?= $post->getName() ?>">
                     <img src="/article-placeholder.jpg" alt="<?= $post->getName() ?>" width="200"/>
                 </a>
@@ -17,4 +17,4 @@ use Jaroslavv\Blog\Block\CategoryBlock;
             </div>
         <?php endforeach; ?>
     </div>
-</div>
+</section>

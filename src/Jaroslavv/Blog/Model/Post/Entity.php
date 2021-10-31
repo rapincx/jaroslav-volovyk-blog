@@ -95,9 +95,18 @@ class Entity extends BaseEntity
     }
 
     /**
-     * @return float
+     * @param string $format
+     * @return string
      */
-    public function getDate(): float
+    public function getDate(string $format = 'Y-m-d'): string
+    {
+        return date('Y-m-d', $this->date) ?? '';
+    }
+
+    /**
+     * @return int
+     */
+    public function getDateNative(): int
     {
         return $this->date;
     }

@@ -8,6 +8,27 @@ class Block
 {
     protected string $template = '';
 
+    public function __construct()
+    {
+        $this->init();
+    }
+
+    /**
+     *
+     */
+    public function init(): void
+    {
+        $this->template = $this->getView() . $this->template;
+    }
+
+    /**
+     * @return string
+     */
+    public function getView(): string
+    {
+        return __DIR__ . '/../view/';
+    }
+
     /**
      * @return string
      */

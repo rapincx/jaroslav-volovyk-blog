@@ -88,8 +88,8 @@ class PostRepository implements RepositoryInterface
     {
         $data = array_filter(
             $this->getList(),
-            static function ($product) use ($url) {
-                return $product->getUrl() === $url;
+            static function ($post) use ($url) {
+                return $post->getUrl() === $url;
             }
         );
 
@@ -104,10 +104,14 @@ class PostRepository implements RepositoryInterface
      */
     public function getByIds(array $postIds)
     {
-        return array_intersect_key(
+        $posts = array_intersect_key(
             $this->getList(),
             array_flip($postIds)
         );
+        usort($posts, static function ($a, $b) {
+            return $b->getDateNative() - $a->getDateNative();
+        });
+        return $posts;
     }
 
     /**

@@ -1,5 +1,8 @@
 <?php
-/** @var \DVCampus\Catalog\Block\CategoryList $block */
+/** @var CategoryListBlock $block */
+
+use Jaroslavv\Blog\Block\CategoryListBlock;
+
 ?>
 <ul>
     <?php foreach ($block->getCategories() as $category) : ?>

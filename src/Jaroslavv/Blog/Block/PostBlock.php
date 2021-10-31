@@ -10,7 +10,7 @@ class PostBlock extends Block
 {
     private Request $request;
 
-    protected string $template = '../src/DVCampus/Catalog/view/product.php';
+    protected string $template = 'post.php';
 
     /**
      * @param Request $request
@@ -20,6 +20,15 @@ class PostBlock extends Block
     )
     {
         $this->request = $request;
+        parent::__construct();
+    }
+
+    /**
+     * @return string
+     */
+    public function getView(): string
+    {
+        return __DIR__ . '/../view/';
     }
 
     /**

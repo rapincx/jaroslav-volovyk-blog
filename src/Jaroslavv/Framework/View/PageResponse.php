@@ -2,7 +2,9 @@
 
 namespace Jaroslavv\Framework\View;
 
-class PageResponse
+use Jaroslavv\Framework\Http\Response\Raw;
+
+class PageResponse extends Raw
 {
     private Renderer $renderer;
 
@@ -11,7 +13,8 @@ class PageResponse
      */
     public function __construct(
         Renderer $renderer
-    ) {
+    )
+    {
         $this->renderer = $renderer;
     }
 
