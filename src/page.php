@@ -1,9 +1,9 @@
 <?php
-require_once '../src/data.php';
 
-/**
- * @var string $page
- */
+use Jaroslavv\Blog\Block\CategoryListBlock;
+use Jaroslavv\Framework\View\Renderer;
+
+/** @var Renderer $this */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,18 +32,12 @@ require_once '../src/data.php';
         <img src="logo.png" alt="chaOS Logo" width="200"/>
     </a>
     <nav>
-        <ul>
-            <?php foreach (blogGetCategory() as $category) : ?>
-                <li>
-                    <a href="/<?= $category['url'] ?>"><?= $category['name'] ?></a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
+        <?= $this->render(CategoryListBlock::class) ?>
     </nav>
 </header>
 
 <main>
-    <?php require_once "../src/pages/$page" ?>
+    <?= $this->render($this->getContent(), $this->getContentBlockTemplate()) ?>
 </main>
 
 <footer>
