@@ -14,13 +14,12 @@ class IndexController implements ControllerInterface
 
     /**
      * @param AdapterInterface $adapter
-     * @param Html $html
+     * @param Html             $html
      */
     public function __construct(
         AdapterInterface $adapter,
-        Html             $html
-    )
-    {
+        Html $html
+    ) {
         $this->adapter = $adapter;
         $this->html = $html;
     }

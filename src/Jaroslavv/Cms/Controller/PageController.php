@@ -17,14 +17,13 @@ class PageController implements ControllerInterface
     private PageResponse $pageResponse;
 
     /**
-     * @param Request $request
+     * @param Request      $request
      * @param PageResponse $pageResponse
      */
     public function __construct(
-        Request      $request,
+        Request $request,
         PageResponse $pageResponse
-    )
-    {
+    ) {
         $this->pageResponse = $pageResponse;
         $this->request = $request;
     }

@@ -6,6 +6,7 @@ namespace Jaroslavv\ContactUs\Controller;
 
 use Jaroslavv\Framework\Http\Controller\ControllerInterface;
 use Jaroslavv\Framework\Http\Response\Raw;
+use Jaroslavv\Framework\View\Block;
 use Jaroslavv\Framework\View\PageResponse;
 
 class FormController implements ControllerInterface
@@ -15,9 +16,7 @@ class FormController implements ControllerInterface
     /**
      * @param PageResponse $pageResponse
      */
-    public function __construct(
-        PageResponse $pageResponse
-    )
+    public function __construct(PageResponse $pageResponse)
     {
         $this->pageResponse = $pageResponse;
     }

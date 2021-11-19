@@ -15,8 +15,7 @@ class Router implements RouterInterface
      */
     public function __construct(
         Request $request
-    )
-    {
+    ) {
         $this->request = $request;
     }
 

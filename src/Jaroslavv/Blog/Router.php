@@ -22,16 +22,15 @@ class Router implements RouterInterface
     private PostRepository $postRepository;
 
     /**
-     * @param Request $request
+     * @param Request            $request
      * @param CategoryRepository $categoryRepository
-     * @param PostRepository $postRepository
+     * @param PostRepository     $postRepository
      */
     public function __construct(
-        Request            $request,
+        Request $request,
         CategoryRepository $categoryRepository,
-        PostRepository     $postRepository
-    )
-    {
+        PostRepository $postRepository
+    ) {
         $this->request = $request;
         $this->categoryRepository = $categoryRepository;
         $this->postRepository = $postRepository;
@@ -39,6 +38,7 @@ class Router implements RouterInterface
 
     /**
      * @param string $requestUrl
+     *
      * @return string
      * @throws DependencyException
      * @throws NotFoundException
